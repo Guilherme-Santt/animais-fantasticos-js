@@ -21,25 +21,36 @@ function initTabNav() {
 }
 initTabNav();
 
-function initAccordion() {
-  const accordionList = document.querySelectorAll('.js-accordion dt');
-  const activeClass = 'ativo';
-  
-  if(accordionList.length) {
-    accordionList[0].classList.add(activeClass);
-    accordionList[0].nextElementSibling.classList.add(activeClass);
+function initAccordion(){
+  const accordionList = document.querySelectorAll('.js-accordion dt')
+  const ActiveClass = "ativo"
 
-    function activeAccordion() {
-      this.classList.toggle(activeClass);
-      this.nextElementSibling.classList.toggle(activeClass);
+  // accordionList.forEach( (e) => {
+  //     e.classList.remove('ativo')
+  //     console.log(e)
+  // });
+
+  if(accordionList.length){
+    accordionList[0].classList.add(ActiveClass)
+    accordionList[0].nextElementSibling.classList.add(ActiveClass)
+    
+    function ActiveAccordion(){
+      accordionList.forEach( (e) => {
+        e.classList.remove('ativo')
+        e.nextElementSibling.classList.remove('ativo')
+        console.log(e)
+    });
+      this.classList.toggle(ActiveClass)
+      this.nextElementSibling.classList.toggle(ActiveClass)
     }
-
+    
     accordionList.forEach((item) => {
-      item.addEventListener('click', activeAccordion);
+      item.addEventListener('click', ActiveAccordion)
     });
   }
 }
 initAccordion();
+
 
 function initScrollSuave() {
   const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
