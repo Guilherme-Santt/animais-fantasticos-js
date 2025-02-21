@@ -35,12 +35,12 @@ function initAccordion(){
     accordionList[0].nextElementSibling.classList.add(ActiveClass)
     
     function ActiveAccordion(){
-      accordionList.forEach( (e) => {
-        e.classList.remove('ativo')
-        e.nextElementSibling.classList.remove('ativo')
-        console.log(e)
-    });
-      this.classList.toggle(ActiveClass)
+      // accordionList.forEach( (e) => {
+      //   e.classList.remove('ativo')
+      //   e.nextElementSibling.classList.remove('ativo')
+      //   console.log(e)
+      // });
+      // this.classList.toggle(ActiveClass)
       this.nextElementSibling.classList.toggle(ActiveClass)
     }
     
