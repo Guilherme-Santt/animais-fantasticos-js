@@ -1,4 +1,4 @@
-function initTabNav() {
+(function initTabNav() {
   const tabMenu = document.querySelectorAll('.js-tabmenu li');
   const tabContent = document.querySelectorAll('.js-tabcontent section');
 
@@ -18,10 +18,9 @@ function initTabNav() {
       });
     });
   }
-}
-initTabNav();
+})();
 
-function initAccordion(){
+(function initAccordion(){
   const accordionList = document.querySelectorAll('.js-accordion dt')
   const ActiveClass = "ativo"
 
@@ -48,11 +47,10 @@ function initAccordion(){
       item.addEventListener('click', ActiveAccordion)
     });
   }
-}
-initAccordion();
+})();
 
 
-function initScrollSuave() {
+(function initScrollSuave() {
   const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
 
   function scrollToSection(event) {
@@ -75,10 +73,9 @@ function initScrollSuave() {
   linksInternos.forEach((link) => {
     link.addEventListener('click', scrollToSection);
   });
-}
-initScrollSuave();
+})();
 
-function initAnimacaoScroll() {
+(function initAnimacaoScroll() {
   const sections = document.querySelectorAll('.js-scroll');
   if(sections.length) {
     const windowMetade = window.innerHeight * 0.6;
@@ -98,5 +95,18 @@ function initAnimacaoScroll() {
 
     window.addEventListener('scroll', animaScroll);
   }
-}
-initAnimacaoScroll();
+})();
+
+(() => {
+  const btnMail = document.querySelector('.js-button')
+  const modal = document.querySelector('.modal')
+  const janela_modal = document.querySelector('.janela-modal')
+  const Toggle = (e) => {
+    e.classList.toggle('high')
+  }
+  
+  btnMail.addEventListener("click", () => Toggle(modal))
+  modal.addEventListener("click", () => Toggle(modal))
+  janela_modal.addEventListener("click", (e) => e.stopPropagation())
+})()
+  
