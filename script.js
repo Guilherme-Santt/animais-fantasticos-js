@@ -24,22 +24,11 @@
   const accordionList = document.querySelectorAll('.js-accordion dt')
   const ActiveClass = "ativo"
 
-  // accordionList.forEach( (e) => {
-  //     e.classList.remove('ativo')
-  //     console.log(e)
-  // });
-
   if(accordionList.length){
     accordionList[0].classList.add(ActiveClass)
     accordionList[0].nextElementSibling.classList.add(ActiveClass)
     
     function ActiveAccordion(){
-      // accordionList.forEach( (e) => {
-      //   e.classList.remove('ativo')
-      //   e.nextElementSibling.classList.remove('ativo')
-      //   console.log(e)
-      // });
-      // this.classList.toggle(ActiveClass)
       this.nextElementSibling.classList.toggle(ActiveClass)
     }
     
@@ -61,13 +50,6 @@
       behavior: 'smooth',
       block: 'start',
     });
-
-    // forma alternativa
-    // const topo = section.offsetTop;
-    // window.scrollTo({
-    //   top: topo,
-    //   behavior: 'smooth',
-    // });
   }
 
   linksInternos.forEach((link) => {
@@ -90,7 +72,6 @@
           section.classList.remove('ativo');
       })
     }
-
     animaScroll();
 
     window.addEventListener('scroll', animaScroll);
